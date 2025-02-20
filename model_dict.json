@@ -135,7 +135,7 @@
         "name": "mao_pro",
         "description": "",
         "url": "/live2d-models/mao_pro/mao_pro.model3.json",
-        "kScale": 0.3,
+        "kScale": 0.01,
         "initialXshift": 0,
         "initialYshift": 0,
         "kXOffset": 1150,
@@ -158,5 +158,25 @@
                 "": 1
             }
         }
-    }
+},
+    {
+        "name": "megumi",
+        "description": "",
+        "url": "/live2d-models/megumi/1024100.model3.json",
+        "kScale": 0.3,
+        "initialXshift": 0,
+        "initialYshift": 0,
+        "kXOffset": 1150,
+        "idleMotionGroupName": "Idle",
+        "emotionMap": {
+            "neutral": 0,
+            "anger": 2,
+            "disgust": 2,
+            "fear": 1,
+            "joy": 3,
+            "smirk": 3,
+            "sadness": 1,
+            "surprise": 3
+        }
+    	}
 ]

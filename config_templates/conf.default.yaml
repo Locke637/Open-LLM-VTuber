@@ -48,7 +48,7 @@ character_config:
         # "openai_compatible_llm", "llama_cpp_llm", "claude_llm", "ollama_llm"
         # "openai_llm", "gemini_llm", "zhipu_llm", "deepseek_llm", "groq_llm"
         # "mistral_llm"
-        llm_provider: "ollama_llm"
+        llm_provider: "gemini_llm"
         # let ai speak as soon as the first comma is received on the first sentence
         # to reduced latency.
         faster_first_response: True
@@ -131,8 +131,8 @@ character_config:
         temperature: 1.0 # value between 0 to 2
 
       gemini_llm:
-        llm_api_key: "Your Gemini API Key"
-        model: "gemini-2.0-flash-exp"
+        llm_api_key: "AIzaSyChTaHWobqKa9xOjed6zB4Fho88xZ_bGlw"
+        model: "gemini-2.0-flash"
         temperature: 1.0 # value between 0 to 2
 
       zhipu_llm:
@@ -250,7 +250,7 @@ character_config:
 
   # =================== Text to Speech ===================
   tts_config:
-    tts_model: "edge_tts"
+    tts_model: "gpt_sovits_tts"
     # text to speech model options:
     #   "azure_tts", "pyttsx3_tts", "edge_tts", "bark_tts",
     #   "cosyvoice_tts", "melo_tts", "coqui_tts",
@@ -314,9 +314,9 @@ character_config:
       # put ref audio to root path of GPT-Sovits, or set the path here
       api_url: "http://127.0.0.1:9880/tts"
       text_lang: "zh"
-      ref_audio_path: ""
+      ref_audio_path: "说话-名字是我自己取的，大家也叫我三月、小三月…你呢？你想叫我什么？.wav"
       prompt_lang: "zh"
-      prompt_text: ""
+      prompt_text: "说话-名字是我自己取的，大家也叫我三月、小三月…你呢？你想叫我什么？"
       text_split_method: "cut5"
       batch_size: "1"
       media_type: "wav"
