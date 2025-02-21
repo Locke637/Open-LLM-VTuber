@@ -276,6 +276,7 @@ class BasicMemoryAgent(AgentInterface):
 
             # Store complete response
             self._add_message(complete_response, "assistant")
+            print(complete_response)
 
         return chat_with_memory
 
