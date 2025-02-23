@@ -169,14 +169,14 @@
         "kXOffset": 1150,
         "idleMotionGroupName": "Idle",
         "emotionMap": {
-            "neutral": 0,
-            "anger": 2,
-            "disgust": 2,
+            "neutral": 2,
+            "anger": 0,
+            "disgust": 0,
             "fear": 1,
-            "joy": 3,
-            "smirk": 3,
-            "sadness": 1,
-            "surprise": 3
+            "joy": 6,
+            "smirk": 5,
+            "sadness": 10,
+            "surprise": 15
         }
     	}
 ]
