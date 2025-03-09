@@ -7,8 +7,6 @@ conf.yaml
 !/live2d-models/shizuku
 /characters/*
 
-# ignore frontend directory (separate project)
-/frontend/
 
 # ignore non-default character configs
 /character-configs/*
