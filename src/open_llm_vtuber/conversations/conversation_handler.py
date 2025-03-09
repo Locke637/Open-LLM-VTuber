@@ -30,7 +30,7 @@ async def handle_conversation_trigger(
 ) -> None:
     """Handle triggers that start a conversation"""
     if msg_type == "ai-speak-signal":
-        user_input = ""
+        user_input = data.get("proactive_prompt", "")
         await websocket.send_text(
             json.dumps(
                 {

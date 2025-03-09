@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI主动说话设置</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .highlight {
+            border: 2px solid #007bff;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .error {
+            background-color: #ffe6e6;
+            border: 1px solid #ffcccc;
+            color: #cc0000;
+        }
+
+        .success {
+            background-color: #e6ffe6;
+            border: 1px solid #ccffcc;
+            color: #006600;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h1 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .setting-item {
+            margin-bottom: 15px;
+        }
+
+        .setting-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .examples {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .example-item {
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AI主动说话设置</h1>
+
+    <div class="section highlight">
+        <h2>设置主动说话提示词</h2>
+        <p>当AI长时间没有收到用户输入时，会主动发起对话。你可以在这里设置一个提示词，引导AI的主动对话内容。</p>
+        
+        <div class="setting-item">
+            <label for="proactivePrompt">主动说话提示词：</label>
+            <textarea id="proactivePrompt" placeholder="输入提示词，引导AI主动说话的内容，例如：'我想和你聊聊天气'"></textarea>
+        </div>
+        
+        <button id="saveProactiveSettings" class="button">保存设置</button>
+        <div id="proactiveStatus" class="status"></div>
+        
+        <div class="examples">
+            <h3>提示词示例：</h3>
+            <div class="example-item">
+                <strong>日语角色：</strong> ダーリン、何考えてるの？（亲爱的，你在想什么呢？）
+            </div>
+            <div class="example-item">
+                <strong>中文角色：</strong> 善琪君，我今天想和你分享一些有趣的事情...
+            </div>
+            <div class="example-item">
+                <strong>引导特定话题：</strong> 我想和你聊聊我最近看的一部动画
+            </div>
+            <div class="example-item">
+                <strong>表达情感：</strong> 我今天感觉有点寂寞，想听听你的声音
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← 返回主页</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 从localStorage加载保存的设置
+            const savedPrompt = localStorage.getItem('proactivePrompt') || '';
+            document.getElementById('proactivePrompt').value = savedPrompt;
+
+            // 保存设置
+            document.getElementById('saveProactiveSettings').addEventListener('click', function() {
+                const prompt = document.getElementById('proactivePrompt').value;
+                localStorage.setItem('proactivePrompt', prompt);
+                
+                const statusElem = document.getElementById('proactiveStatus');
+                statusElem.textContent = '设置已保存！提示词将在AI下次主动说话时生效。';
+                statusElem.className = 'status success';
+                
+                setTimeout(() => {
+                    statusElem.textContent = '';
+                    statusElem.className = 'status';
+                }, 3000);
+            });
+
+            console.log('AI主动说话设置页面已加载');
+        });
+    </script>
+</body>
+
+</html> 
